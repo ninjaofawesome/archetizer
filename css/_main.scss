@@ -12,7 +12,18 @@ body {
   font-size: 5em;
 }
 
-.fizzbuzz-list{
+.description {
+  text-align: justify;
+  color: $gray;
+}
+
+.top-line, .bottom-line {
+  width: 100%;
+  border-bottom: 2px solid $black;
+  margin: 2% 0;
+}
+
+.fizzbuzz-list,.interactive-fizzbuzz-list{
   list-style-type: none;
 }
 
