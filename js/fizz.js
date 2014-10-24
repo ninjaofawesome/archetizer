@@ -25,85 +25,40 @@ $('.fizzbuzz-list').each(function(){
 });
 
 //do the same thing, but make it interesting.
+function myNums(){
+    var nums = [];
+  for( i=1; i < 101; i++){
+    var num = ' ';
+    if (i % 3 === 0 && i % 5 === 0) {
+      num += "Fizz Buzz!";
+      nums.push(num);
+    }
+    else if(i % 3 === 0){
+      num += "Fizz!";
+      nums.push(num);
+    }
+    else if(i % 5 === 0){
+      num += "Buzz!";
+      nums.push(num);
+    }
+    else {
+      num = i;
+      nums.push(num);
+    }
+  }
+  return nums;
+};
 
-var i = 1;
+var numbers = myNums();
+var i = 0, l = numbers.length;
+function iterator() {
+  $('.interactive-fizzbuzz-list').append('<li class="each-num">' + numbers[i] + '</li>');
 
-function myLoop () {
-   setTimeout(function () {
-      var nums = [];
-      var num = ' ';
-      if (i % 3 === 0 && i % 5 === 0) {
-        num += "Fizz Buzz!";
-        nums.push(num);
-      }
-      else if(i % 3 === 0){
-        num += "Fizz!";
-        nums.push(num);
-      }
-      else if(i % 5 === 0){
-        num += "Buzz!";
-        nums.push(num);
-      }
-      else {
-        num = i;
-        nums.push(num);
-      }
-      i++;
-      if (i < 101) {
-         myLoop();
-      }
+  if(++i<l) {
+      setTimeout(iterator, 100);
+  }
+};
 
-      console.log(nums);
-
-      $(nums).each(function(){
-        var individualNum = $(this).splice();
-        $('.itneractive-fizzbuzz-list').append('<li class="my-nums">' + individualNum + '</li>' );
-
-      });
-
-
-   }, 100)
-}
-
-myLoop();
-
-var items = [];
-
-
-
-
-// //figure out numbers, shove them into array
-// var getFizzy = function() {
-//   var myArray = [];
-//   for( i=1; i < 101; i++){
-//     var num = ' ';
-//     if (i % 3 === 0 && i % 5 === 0) {
-//       num += "Fizz Buzz!";
-//       myArray.push(num);
-//     }
-//     else if(i % 3 === 0){
-//       num += "Fizz!";
-//       myArray.push(num);
-//     }
-//     else if(i % 5 === 0){
-//       num += "Buzz!";
-//       myArray.push(num);
-//     }
-//     else {
-//       num = i;
-//       myArray.push(num);
-//     }
-//   }
-//   return myArray;
-// };
-
-// //print out that information on the screen
-// function printFizzy(array){
-//   array.each(function(i){
-//     $('itneractive-fizzbuzz-list').append('<li>' + i + '</li>');
-//   });
-// }
-
-// printFizzy(getFizzy);
+iterator();
 
 });
