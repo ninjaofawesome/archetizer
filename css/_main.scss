@@ -1,0 +1,23 @@
+body {
+  background-color: $white;
+  color: $black;
+  font-size: 16px;
+  line-height: 16px;
+  font-family: $base;
+  font-weight: 300;
+}
+
+.title{
+  text-align: center;
+  font-size: 5em;
+}
+
+.fizzbuzz-list{
+  list-style-type: none;
+}
+
+.each-num {
+  padding: 2% 0;
+  text-align: center;
+}
+
