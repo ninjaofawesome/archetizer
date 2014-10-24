@@ -26,32 +26,38 @@ $('.fizzbuzz-list').each(function(){
 
 //do the same thing, but make it interesting.
 
-$('.interactive-fizzbuzz-list').each(function(){
+//figure out numbers, shove them into array
+var getFizzy = function() {
+  var myArray = [];
   for( i=1; i < 101; i++){
     var num = ' ';
-    var show = $(this);
     if (i % 3 === 0 && i % 5 === 0) {
       num += "Fizz Buzz!";
+      myArray.push(num);
     }
     else if(i % 3 === 0){
       num += "Fizz!";
+      myArray.push(num);
     }
     else if(i % 5 === 0){
       num += "Buzz!";
+      myArray.push(num);
     }
     else {
       num = i;
+      myArray.push(num);
     }
-
-    setTimeout(function(i, num){
-       show.append('<li class="each-num">' + num + '</li>');
-    }, i * 600);
-
   }
-});
+  return myArray;
+};
 
+//print out that information on the screen
+function printFizzy(array){
+  array.each(function(i){
+    $('itneractive-fizzbuzz-list').append('<li>' + i + '</li>');
+  });
+}
 
-
-
+printFizzy(getFizzy);
 
 });

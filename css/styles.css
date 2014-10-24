@@ -25,3 +25,6 @@ body {
 .each-num {
   padding: 2% 0;
   text-align: center; }
+
+.placeholder {
+  display: none; }
